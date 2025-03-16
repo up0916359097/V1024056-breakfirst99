@@ -58,7 +58,7 @@ export default function OrdersPage() {
                 <TableRow key={order.id}>
                 <TableCell>{order.id}</TableCell>
                 <TableCell>
-                <Badge>{order.status}</Badge>
+                <Badge className={order.status==="等待中"?"bg-blue-700":""}>{order.status}</Badge>
                 </TableCell>
                 <TableCell>{order.total}</TableCell>
                 <TableCell>{order.table}</TableCell>

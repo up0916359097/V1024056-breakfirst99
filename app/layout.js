@@ -38,6 +38,7 @@ function Sidebar(){
     <NavLink href="/menu">菜單管理</NavLink>
     <NavLink href="/orders">訂單管理</NavLink>
     <NavLink href="/inventory">庫存管理</NavLink>
+    <NavLink href="/blog">部落格(動態路由)</NavLink>
     <NavLink href="/">Next.js</NavLink>
     
     </div>

@@ -10,6 +10,7 @@ export default function Sidebar(){
     <NavLink href="/inventory">庫存管理</NavLink>
     <NavLink href="/blog">部落格(動態路由)</NavLink>
     <NavLink href="/test">Template</NavLink>
+    <NavLink href="/home2">懸吊選單</NavLink>
     <NavLink href="/">Next.js</NavLink>
     
     </div>

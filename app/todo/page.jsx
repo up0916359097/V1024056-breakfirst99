@@ -8,7 +8,6 @@ export default async function TodoPage() {
     const todos = await prisma.todo.findMany({
         orderBy: [{ id: "asc" }],
     });
-
     return (
         <main className="container mx-auto p-4">
             <h1 className="text-2xl font-bold text-center my-6">Todo List</h1>
@@ -32,17 +31,17 @@ export default async function TodoPage() {
                      key={todo.id} 
                      className="flex justify-between items-center bg-gray-100 px-4 py-2 rounded shadow"
                     >
-                        <span className={`${todo.isDone ? "line-through" : ""} text-lg`}>{todo.title}</span>
+                        <span className={`${todo.done ? "line-through" : ""} text-lg`}>{todo.title}</span>
                         <div>
                             <div className="flex flex-wrap gap-2">                            
                                 <form action={toggleTodo}>
                                     <input type="hidden" name="id" id={todo.id} value={todo.id} />
-                                    <input type="hidden" name="isDone" value={todo.isDone} />
+                                    <input type="hidden" name="isDone" value={todo.done} />
                                     <button
                                     type="submit"
                                     className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                                     >
-                                        {todo.isDone ? "Undo" : "Done"}
+                                        {todo.done ? "Undo" : "Done"}
                                     </button>
                                 </form>
                                 <form action={deleteTodo}>

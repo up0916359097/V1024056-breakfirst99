@@ -9,7 +9,7 @@ export default async function toggleTodo(formData) {
     try{
         await prisma.todo.update({
             where: { id },
-            data: { isDone: !isDone },
+            data: { done: !isDone },
         });
         revalidatePath("/todo");
     } catch (error) {

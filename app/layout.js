@@ -26,7 +26,6 @@ export default function RootLayout({ children }) {
         <div className="flex-1 p-8">{children}</div>
 
         </div>
-        {children}
       </body>
     </html>
   );

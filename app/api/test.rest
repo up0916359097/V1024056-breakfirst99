@@ -6,4 +6,29 @@ GET {{host}}/api/todo
 content-type: application/json
 
 ###
-GET {{host}}/api/todo?filter=aa
+GET {{host}}/api/todo?filter=tt
+content-type: application/json
+
+
+###
+POST {{host}}/api/todo
+content-type: application/json
+
+{
+    "title": "abcd hello"
+}
+
+###
+GET {{host}}/api/todo/19
+
+###
+DELETE  {{host}}/api/todo/19
+
+###
+PATCH {{host}}/api/todo/19
+
+{
+    "title": "aaa 313 true",
+    "done":true
+}
+    

@@ -1,13 +1,11 @@
 @port = 3000
-
 @host = http://localhost:{{port}}
 
 GET {{host}}/api/todo
 content-type: application/json
 
 ###
-GET {{host}}/api/todo?filter=tt
-content-type: application/json
+GET {{host}}/api/todo?filter=a
 
 
 ###
@@ -19,16 +17,29 @@ content-type: application/json
 }
 
 ###
-GET {{host}}/api/todo/19
+GET {{host}}/api/todo/68
 
 ###
-DELETE  {{host}}/api/todo/19
+DELETE {{host}}/api/todo/68
 
 ###
-PATCH {{host}}/api/todo/19
+PATCH {{host}}/api/todo/68
 
 {
-    "title": "aaa 313 true",
-    "done":true
+    "title": "aaa 333"
 }
-    
+
+###
+PATCH {{host}}/api/todo/68
+
+{
+    "isDone": true
+}
+
+###
+PATCH {{host}}/api/todo/63
+
+{
+    "title": "aaa 333 xyz",
+    "isDone": true
+}

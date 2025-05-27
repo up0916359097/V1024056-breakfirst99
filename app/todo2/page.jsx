@@ -12,7 +12,7 @@ export default  function TodoPage() {
         fetch("/api/todo")
         .then((res) => res.json())
         .then((data) => setTodos(data));
-}, []);
+    }, []);
     
 
     const handleAddTodo = async (e) =>{
@@ -29,18 +29,23 @@ export default  function TodoPage() {
     setTodos((prevTodos) =>[...prevTodos, newTodo]);
     setTitle("");
 }
-const handleToggleTodo = async (e, id, isDone) => {
+const handleToggleTodo = async (e, id, done) => {
     e.preventDefault();
-    const res = await fetch(`/api/todo/${id}`,{
+    
+    await fetch(`/api/todo/${id}`,{
         method: "PATCH",
         headers:{
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({isDone :!isDone}),
+        body: JSON.stringify({done :!done}),
     });
-    const newTodos = todos.map((todo)=> todo.id !==id ? todo :{...
-        todo, isDone: !isDone});
-        setTodos(newTodos);           
+    const newTodos = todos.map((todo)=> {
+        if(todo.id!==id){
+            return todo
+        }
+        return {...todo,done:!todo.done}
+    });
+    setTodos(newTodos);
 };
 
 const handleDeleteTodo = async (e,id) =>{
@@ -48,7 +53,7 @@ const handleDeleteTodo = async (e,id) =>{
     await fetch(`/api/todo/${id}`,{
         method:"DELETE",
     });
-    const newTodos = todos.fliter((todo)=> todo.id !==id);
+    const newTodos = todos.filter((todo)=> todo.id !==id);
     setTodos(newTodos);
 
 }
@@ -84,7 +89,7 @@ const handleDeleteTodo = async (e,id) =>{
                                     <button
                                     type="button"
                                     className="bg-blue-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
-                                    onClick={(e) => handleToggleTodo(e, todo.id,todo.isDone)}
+                                    onClick={(e) => handleToggleTodo(e, todo.id,todo.done)}
                                     >
                                         {todo.done ? "Undo" : "Done"}
                                     </button>

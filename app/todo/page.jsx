@@ -1,4 +1,5 @@
 import prisma from "@/lib/prisma";
+import {addTodo, deleteTodo, toggleTodo } from"@/app/actions/todo";
 import addTodo from "@/app/actions/addTodo";
 import deleteTodo from "@/app/actions/deleteTodo";
 import toggleTodo from "@/app/actions/toggleTodo";

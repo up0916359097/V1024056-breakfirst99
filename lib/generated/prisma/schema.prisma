@@ -16,7 +16,7 @@ datasource db {
 }
 
 model Todo {
-  id    Int     @id @default(autoincrement())
-  title String
-  done  Boolean @default(false)
+  id     Int     @id @default(autoincrement())
+  title  String
+  isDone Boolean @default(false)
 }

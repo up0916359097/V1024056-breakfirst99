@@ -892,19 +892,19 @@ export namespace Prisma {
   export type TodoMinAggregateOutputType = {
     id: number | null
     title: string | null
-    done: boolean | null
+    isDone: boolean | null
   }
 
   export type TodoMaxAggregateOutputType = {
     id: number | null
     title: string | null
-    done: boolean | null
+    isDone: boolean | null
   }
 
   export type TodoCountAggregateOutputType = {
     id: number
     title: number
-    done: number
+    isDone: number
     _all: number
   }
 
@@ -920,19 +920,19 @@ export namespace Prisma {
   export type TodoMinAggregateInputType = {
     id?: true
     title?: true
-    done?: true
+    isDone?: true
   }
 
   export type TodoMaxAggregateInputType = {
     id?: true
     title?: true
-    done?: true
+    isDone?: true
   }
 
   export type TodoCountAggregateInputType = {
     id?: true
     title?: true
-    done?: true
+    isDone?: true
     _all?: true
   }
 
@@ -1025,7 +1025,7 @@ export namespace Prisma {
   export type TodoGroupByOutputType = {
     id: number
     title: string
-    done: boolean
+    isDone: boolean
     _count: TodoCountAggregateOutputType | null
     _avg: TodoAvgAggregateOutputType | null
     _sum: TodoSumAggregateOutputType | null
@@ -1050,28 +1050,28 @@ export namespace Prisma {
   export type TodoSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     title?: boolean
-    done?: boolean
+    isDone?: boolean
   }, ExtArgs["result"]["todo"]>
 
   export type TodoSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     title?: boolean
-    done?: boolean
+    isDone?: boolean
   }, ExtArgs["result"]["todo"]>
 
   export type TodoSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     title?: boolean
-    done?: boolean
+    isDone?: boolean
   }, ExtArgs["result"]["todo"]>
 
   export type TodoSelectScalar = {
     id?: boolean
     title?: boolean
-    done?: boolean
+    isDone?: boolean
   }
 
-  export type TodoOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "done", ExtArgs["result"]["todo"]>
+  export type TodoOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "isDone", ExtArgs["result"]["todo"]>
 
   export type $TodoPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Todo"
@@ -1079,7 +1079,7 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       id: number
       title: string
-      done: boolean
+      isDone: boolean
     }, ExtArgs["result"]["todo"]>
     composites: {}
   }
@@ -1505,7 +1505,7 @@ export namespace Prisma {
   interface TodoFieldRefs {
     readonly id: FieldRef<"Todo", 'Int'>
     readonly title: FieldRef<"Todo", 'String'>
-    readonly done: FieldRef<"Todo", 'Boolean'>
+    readonly isDone: FieldRef<"Todo", 'Boolean'>
   }
     
 
@@ -1889,7 +1889,7 @@ export namespace Prisma {
   export const TodoScalarFieldEnum: {
     id: 'id',
     title: 'title',
-    done: 'done'
+    isDone: 'isDone'
   };
 
   export type TodoScalarFieldEnum = (typeof TodoScalarFieldEnum)[keyof typeof TodoScalarFieldEnum]
@@ -1974,13 +1974,13 @@ export namespace Prisma {
     NOT?: TodoWhereInput | TodoWhereInput[]
     id?: IntFilter<"Todo"> | number
     title?: StringFilter<"Todo"> | string
-    done?: BoolFilter<"Todo"> | boolean
+    isDone?: BoolFilter<"Todo"> | boolean
   }
 
   export type TodoOrderByWithRelationInput = {
     id?: SortOrder
     title?: SortOrder
-    done?: SortOrder
+    isDone?: SortOrder
   }
 
   export type TodoWhereUniqueInput = Prisma.AtLeast<{
@@ -1989,13 +1989,13 @@ export namespace Prisma {
     OR?: TodoWhereInput[]
     NOT?: TodoWhereInput | TodoWhereInput[]
     title?: StringFilter<"Todo"> | string
-    done?: BoolFilter<"Todo"> | boolean
+    isDone?: BoolFilter<"Todo"> | boolean
   }, "id">
 
   export type TodoOrderByWithAggregationInput = {
     id?: SortOrder
     title?: SortOrder
-    done?: SortOrder
+    isDone?: SortOrder
     _count?: TodoCountOrderByAggregateInput
     _avg?: TodoAvgOrderByAggregateInput
     _max?: TodoMaxOrderByAggregateInput
@@ -2009,46 +2009,46 @@ export namespace Prisma {
     NOT?: TodoScalarWhereWithAggregatesInput | TodoScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"Todo"> | number
     title?: StringWithAggregatesFilter<"Todo"> | string
-    done?: BoolWithAggregatesFilter<"Todo"> | boolean
+    isDone?: BoolWithAggregatesFilter<"Todo"> | boolean
   }
 
   export type TodoCreateInput = {
     title: string
-    done?: boolean
+    isDone?: boolean
   }
 
   export type TodoUncheckedCreateInput = {
     id?: number
     title: string
-    done?: boolean
+    isDone?: boolean
   }
 
   export type TodoUpdateInput = {
     title?: StringFieldUpdateOperationsInput | string
-    done?: BoolFieldUpdateOperationsInput | boolean
+    isDone?: BoolFieldUpdateOperationsInput | boolean
   }
 
   export type TodoUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     title?: StringFieldUpdateOperationsInput | string
-    done?: BoolFieldUpdateOperationsInput | boolean
+    isDone?: BoolFieldUpdateOperationsInput | boolean
   }
 
   export type TodoCreateManyInput = {
     id?: number
     title: string
-    done?: boolean
+    isDone?: boolean
   }
 
   export type TodoUpdateManyMutationInput = {
     title?: StringFieldUpdateOperationsInput | string
-    done?: BoolFieldUpdateOperationsInput | boolean
+    isDone?: BoolFieldUpdateOperationsInput | boolean
   }
 
   export type TodoUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     title?: StringFieldUpdateOperationsInput | string
-    done?: BoolFieldUpdateOperationsInput | boolean
+    isDone?: BoolFieldUpdateOperationsInput | boolean
   }
 
   export type IntFilter<$PrismaModel = never> = {
@@ -2085,7 +2085,7 @@ export namespace Prisma {
   export type TodoCountOrderByAggregateInput = {
     id?: SortOrder
     title?: SortOrder
-    done?: SortOrder
+    isDone?: SortOrder
   }
 
   export type TodoAvgOrderByAggregateInput = {
@@ -2095,13 +2095,13 @@ export namespace Prisma {
   export type TodoMaxOrderByAggregateInput = {
     id?: SortOrder
     title?: SortOrder
-    done?: SortOrder
+    isDone?: SortOrder
   }
 
   export type TodoMinOrderByAggregateInput = {
     id?: SortOrder
     title?: SortOrder
-    done?: SortOrder
+    isDone?: SortOrder
   }
 
   export type TodoSumOrderByAggregateInput = {

@@ -1,14 +1,23 @@
 import prisma from "@/lib/prisma";
+<<<<<<< HEAD
 import {addTodo, deleteTodo, toggleTodo } from"@/app/actions/todo";
 import addTodo from "@/app/actions/addTodo";
 import deleteTodo from "@/app/actions/deleteTodo";
 import toggleTodo from "@/app/actions/toggleTodo";
+=======
+import { addTodo, deleteTodo, toggleTodo } from "@/app/actions/todo";
+
+>>>>>>> ce541ea (123)
 
 
 export default async function TodoPage() {
     const todos = await prisma.todo.findMany({
         orderBy: [{ id: "asc" }],
     });
+<<<<<<< HEAD
+=======
+
+>>>>>>> ce541ea (123)
     return (
         <main className="container mx-auto p-4">
             <h1 className="text-2xl font-bold text-center my-6">Todo List</h1>
@@ -37,12 +46,20 @@ export default async function TodoPage() {
                             <div className="flex flex-wrap gap-2">                            
                                 <form action={toggleTodo}>
                                     <input type="hidden" name="id" id={todo.id} value={todo.id} />
+<<<<<<< HEAD
                                     <input type="hidden" name="isDone" value={todo.done} />
+=======
+                                    <input type="hidden" name="done" value={todo.done} />
+>>>>>>> ce541ea (123)
                                     <button
                                     type="submit"
                                     className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                                     >
+<<<<<<< HEAD
                                         {todo.done ? "Undo" : "Done"}
+=======
+                                        {todo.isDone ? "Undo" : "Done"}
+>>>>>>> ce541ea (123)
                                     </button>
                                 </form>
                                 <form action={deleteTodo}>
@@ -61,4 +78,10 @@ export default async function TodoPage() {
             </ul>
         </main>
     )
+<<<<<<< HEAD
 }
+=======
+}
+
+
+>>>>>>> ce541ea (123)

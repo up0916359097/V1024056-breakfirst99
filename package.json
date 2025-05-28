@@ -3,7 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+<<<<<<< HEAD
     "dev": "bun --bun next dev --turbopack",
+=======
+    "dev": "bun next dev --turbopack",
+>>>>>>> ce541ea (123)
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -63,10 +67,19 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+<<<<<<< HEAD
     "@tailwindcss/postcss": "^4",
+=======
+    "@tailwindcss/postcss": "^4.1.7",
+    "babel-plugin-react-compiler": "^19.1.0-rc.2",
+>>>>>>> ce541ea (123)
     "eslint": "^9",
     "eslint-config-next": "15.2.3",
     "prisma": "^6.6.0",
     "tailwindcss": "^4"
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> ce541ea (123)

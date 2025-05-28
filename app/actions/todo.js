@@ -32,11 +32,11 @@ export async function addTodo(formData) {
 
     export  async function toggleTodo(formData) {
     const id = Number(formData.get("id"));
-    const isDone = formData.get("isDone") === "true";
+    const done = formData.get("done") === "true";
     try{
         await prisma.todo.update({
             where: { id },
-            data: { isDone: !isDone },
+            data: { done: !done },
         });
         revalidatePath("/todo");
     } catch (error) {

@@ -1,8 +1,6 @@
 import prisma from "@/lib/prisma";
 import {addTodo, deleteTodo, toggleTodo } from"@/app/actions/todo";
-import addTodo from "@/app/actions/addTodo";
-import deleteTodo from "@/app/actions/deleteTodo";
-import toggleTodo from "@/app/actions/toggleTodo";
+
 
 
 export default async function TodoPage() {
@@ -37,7 +35,7 @@ export default async function TodoPage() {
                             <div className="flex flex-wrap gap-2">                            
                                 <form action={toggleTodo}>
                                     <input type="hidden" name="id" id={todo.id} value={todo.id} />
-                                    <input type="hidden" name="isDone" value={todo.done} />
+                                    <input type="hidden" name="done" value={todo.done} />
                                     <button
                                     type="submit"
                                     className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"

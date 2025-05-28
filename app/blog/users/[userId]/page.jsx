@@ -29,11 +29,7 @@ export default async function UserPage({ params }) {
             </span>
             篇:
         </h2>
-<<<<<<< HEAD
         <div className="list-disc pl-5 p-4">
-=======
-        <div>
->>>>>>> ce541ea (123)
           {userPosts.map((post) => (
             <div key={post.id} className="p-4 shadow-sm rounded-lg mb-4">
               <Link

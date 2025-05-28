@@ -12,7 +12,6 @@ const Toaster = ({
     <Sonner
       theme={theme}
       className="toaster group"
-<<<<<<< HEAD
       toastOptions={{
         classNames: {
           toast:
@@ -24,15 +23,6 @@ const Toaster = ({
             "group-[.toast]:bg-muted group-[.toast]:text-muted-foreground font-medium",
         },
       }}
-=======
-      style={
-        {
-          "--normal-bg": "var(--popover)",
-          "--normal-text": "var(--popover-foreground)",
-          "--normal-border": "var(--border)"
-        }
-      }
->>>>>>> ce541ea (123)
       {...props} />
   );
 }

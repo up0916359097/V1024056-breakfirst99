@@ -18,15 +18,8 @@ datasource db {
 model Todo {
   id  Int @id @default(autoincrement())
   title String
-<<<<<<< HEAD
   isDone  Boolean @default(false)
 }
-=======
-  done  Boolean @default(false)
-}
-
-
->>>>>>> ce541ea (123)
  
 model User {
   id            String          @id @default(cuid())
